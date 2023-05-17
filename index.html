@@ -47,6 +47,9 @@
         <input type="text" name="" id="pass-in">
         <button id="login-user">SIGN IN</button>
       </div>
+      <div class="resetpass">
+        <button id="reset-pass" onclick="forgot()">Reset Password</button>
+      </div>
     </div>
     <div class="logo">
       <img src="logo.jpg" alt="" srcset="">
@@ -199,6 +202,15 @@
 		    alert(errorMessage);
 		  });		  		  
 	  });
+    function forgot()
+    {
+      var emailForgot =  document.getElementById("email-in").value;
+
+
+      auth.sendPasswordReset(emailForgot).then(()=>{
+        window.alert("password reset email has been sent")
+      })
+    }
    
 
   </script>
